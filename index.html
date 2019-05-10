@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+"javacrypt" is licensed under the GNU General Public License v3.0.
+(github.com/ForgivenNin/javacrypt)
+-->
+<html>
+  <head>
+    <title>
+      javacrypt
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      function show(shown, hidden) {
+                document.getElementById(shown).style.display='block';
+                document.getElementById(hidden).style.display='none';
+                return false;
+            }
+    </script>
+  </head>
+  <body style="text-align:center;">
+    <noscript>
+      This application requires JavaScript to be used.
+    </noscript>
+    <div id="Page1">
+      <table>
+        <tr>
+          <h1>
+            Encrypt
+          </h1>
+          <!-- Once encryption HTML is complete, the decryption page can easily be made via copy & pace. -->
+          <button onclick="return show('Page2','Page1');">
+             Change
+          </button>
+        </tr>
+      </table>
+      <fieldset>
+        <p>
+          Encryption Key
+        </p>
+        <input type="text" oninput="" />
+      </fieldset>
+      <fieldset>
+        <p>
+          Text
+        </p>
+        <input type="text" />
+      </fieldset>
+    </div>
+  </body>
+</html>
