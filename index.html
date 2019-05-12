@@ -16,6 +16,11 @@
                 return false;
             }
     </script>
+    <!-- Once encryption script is complete, the decryption script can easily be made -->
+    <script>
+      function encrypt() { 
+      }
+    </script>
   </head>
   <body style="text-align:center;">
     <noscript>
@@ -27,7 +32,7 @@
           <h1>
             Encrypt
           </h1>
-          <!-- Once encryption HTML is complete, the decryption page can easily be made via copy & pace. -->
+          <!-- Once encryption HTML is complete, the decryption page can easily be made. -->
           <button onclick="return show('Page2','Page1');">
              Change
           </button>
@@ -37,7 +42,7 @@
         <p>
           Encryption Key
         </p>
-        <input type="text" oninput="" />
+        <input type="text" oninput="encrypt();" />
       </fieldset>
       <fieldset>
         <p>
