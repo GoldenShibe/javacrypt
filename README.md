@@ -12,6 +12,3 @@ In the one below it, put in a string of characters that is memorable and shareab
 Then, you will see your encrypted message ready to go.
 Now all you need to do is send the text and let the recipient know about the string you came up with.
 It will be up to them, at that point, to decrypt the message by following these steps backwards.
-
-(Encryption Key Rules)
--
