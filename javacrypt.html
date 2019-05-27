@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- javacrypt (https://github.com/ForgivenNin/javacrypt) is licensed under the GNU General Public License v3.0. Copyright (C) 2007 Free Software Foundation, Inc. (https://fsf.org/) -->
+<html>
+  <head>
+    <!-- <title>
+      javacrypt
+    </title> -->
+    <script>
+      function show(shown, hidden) {
+                document.getElementById(shown).style.display='block';
+                document.getElementById(hidden).style.display='none';
+                return false;
+            }
+    </script>
+    <!-- Once encryption script is complete the decryption script can easily be made -->
+    <script>
+      var txt = document.getElementById("words").value;
+      function encrypt(event) {
+       var code = event.key;
+       /* if (code == 1) {
+         alert("It's a one!");
+       } */
+       document.getElementById("product").innerHTML = "Your message is..." + txt + code;
+      }
+    </script>
+  </head>
+  <body>
+    <noscript>
+      This application requires JavaScript to be enabled.
+    </noscript>
+    <table style="width:100%;">
+      <tr>
+        <td>
+          <div id="Page1">
+            <h1>
+              Encrypt
+            </h1>
+            <button style="background-color: white; color: black;" onclick="return show('Page2','Page1');">
+              Change
+            </button>
+            <h3>
+              Text
+            </h3>
+            <input id="words" type="text" />
+            <h3>
+              Key
+            </h3>
+            <input type="text" onkeydown="encrypt(event)" />
+          </div>
+        </td>
+        <td style="text-align: right;">
+          <div>
+            JAVACRYPT - An easy way to encrypt & decrypt text offline. <br />
+            <br />
+            How does it work? <br />
+            For the inner workings of the code, the program has a set of rules depending on what key is pressed. <br />
+            The more characters that are pressed, the more complex the encryption will be. <br />
+            If you think of it like entering a long password, it would be very hard to crack! <br />
+            <br />
+            To use this, you first enter in the text that you want to encrypt into the top box. <br />
+            In the one below it, put in a string of characters that is memorable and shareable. <br />
+            Then, you will see your encrypted message ready to go. <br />
+            Now all you need to do is send the text and let the recipient know about the string you came up with. <br />
+            It will be up to them, at that point, to decrypt the message by following these steps backwards. <br />
+          </div>
+        </td>
+      </tr>
+    </table>
+    <div style="text-align: center;">
+    <h3>
+      Your Message
+    </h3>
+    <p id="product">
+    </p>
+  </div>
+  </body>
+</html>
