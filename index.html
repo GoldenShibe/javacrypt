@@ -1,14 +1,10 @@
 <!DOCTYPE html>
-<!--
-"javacrypt" is licensed under the GNU General Public License v3.0.
-(github.com/ForgivenNin/javacrypt)
--->
+<!-- javacrypt is licensed under the GNU General Public License v3.0. (github.com/ForgivenNin/javacrypt) -->
 <html>
   <head>
     <title>
       javacrypt
     </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script>
       function show(shown, hidden) {
                 document.getElementById(shown).style.display='block';
@@ -16,42 +12,39 @@
                 return false;
             }
     </script>
-    <!-- Once encryption script is complete, the decryption script can easily be made -->
+    <!-- Once encryption script is complete the decryption script can easily be made -->
     <script>
-      function encrypt() {
-       var btn = document.createElement("P");
-       btn.innerHTML = output;
+      var txt = document.getElementById("words").value;
+      function encrypt(event) {
+       var code = event.key;
+       if (code == 1) {
+         alert("It's a one!");
+       }
+       document.getElementById("product").innerHTML = "Your message is..." + txt + code;
       }
     </script>
   </head>
-  <body style="text-align:center;">
+  <body>
     <noscript>
-      This application requires JavaScript to be used.
+      This application requires JavaScript to be enabled.
     </noscript>
     <div id="Page1">
-      <table>
-        <tr>
-          <h1>
-            Encrypt
-          </h1>
-          <!-- Once encryption HTML is complete, the decryption page can easily be made. -->
-          <button onclick="return show('Page2','Page1');">
-             Change
-          </button>
-        </tr>
-      </table>
-      <fieldset>
-        <p>
-          Encryption Key
-        </p>
-        <input type="text" oninput="encrypt();" />
-      </fieldset>
-      <fieldset>
-        <p>
+      <h1>
+        Encrypt
+      </h1>
+      <button style="background-color: white; color: black;" onclick="return show('Page2','Page1');">
+        Change
+      </button>
+      <h3>
           Text
-        </p>
-        <input type="text" />
-      </fieldset>
+      </h3>
+      <input id="words" type="text" />
+      <h3>
+          Key
+      </h3>
+      <input type="text" onkeydown="encrypt(event)" />
+      <p id="product">
+      </p>
     </div>
   </body>
 </html>
