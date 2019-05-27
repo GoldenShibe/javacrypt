@@ -2,9 +2,9 @@
 <!-- javacrypt (https://github.com/ForgivenNin/javacrypt) is licensed under the GNU General Public License v3.0. Copyright (C) 2007 Free Software Foundation, Inc. (https://fsf.org/) -->
 <html>
   <head>
-    <!-- <title>
+    <title>
       javacrypt
-    </title> -->
+    </title>
     <script>
       function show(shown, hidden) {
                 document.getElementById(shown).style.display='block';
@@ -12,23 +12,25 @@
                 return false;
             }
     </script>
-    <!-- Once encryption script is complete the decryption script can easily be made -->
     <script>
-      var txt = document.getElementById("words").value;
       function encrypt(event) {
-       var code = event.key;
-       /* if (code == 1) {
-         alert("It's a one!");
-       } */
-       document.getElementById("product").innerHTML = "Your message is..." + txt + code;
+        var txt = document.getElementById("words").value;
+        var str = txt;
+        str = str.replace(/\s+/g, ''); // <-- Removes spaces in text
+        var code = document.getElementById("digits").value;
+        if (code == 1) {
+          alert("It's a one!");
+       }
+       document.getElementById("product").innerHTML = str;
       }
     </script>
+    <!-- Once encryption portion is complete the other part (the decryption) can easily be made -->
   </head>
-  <body>
+  <body style="background-color: gold; font-family: sans-serif;">
     <noscript>
       This application requires JavaScript to be enabled.
     </noscript>
-    <table style="width:100%;">
+    <table style="width: 100%;">
       <tr>
         <td>
           <div id="Page1">
@@ -43,9 +45,9 @@
             </h3>
             <input id="words" type="text" />
             <h3>
-              Key
+              Key (Use numbers 0-9 only)
             </h3>
-            <input type="text" onkeydown="encrypt(event)" />
+            <input id="digits" type="password" oninput="encrypt(event)" />
           </div>
         </td>
         <td style="text-align: right;">
@@ -55,6 +57,7 @@
             How does it work? <br />
             For the inner workings of the code, the program has a set of rules depending on what key is pressed. <br />
             The more characters that are pressed, the more complex the encryption will be. <br />
+            Thing thing that makes this different from pgp or gpg, however, is that it allows the user to make the key. <br />
             If you think of it like entering a long password, it would be very hard to crack! <br />
             <br />
             To use this, you first enter in the text that you want to encrypt into the top box. <br />
