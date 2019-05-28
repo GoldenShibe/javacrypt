@@ -19,6 +19,7 @@
         str = str.replace(/\s+/g, ''); // <-- Removes spaces in text
         var code = document.getElementById("digits").value;
         // All "alerts" will be removed in final product - this is just here to test it
+        // https://www.w3schools.com/js/js_bitwise.asp (for reference)
         if (code == 0) {
           alert("It's a zero!");
        }
@@ -63,13 +64,13 @@
         <td>
           <div id="Page1">
             <h1>
-              Encrypt
+              <u>Encrypt</u>
             </h1>
             <button style="background-color: white; color: black;" onclick="return show('Page2','Page1');">
               Change
             </button>
             <h3>
-              Text
+              Text (If you have to include numbers in your message, you must write them as words or else the message will not be decipherable)
             </h3>
             <input id="words" type="text" />
             <h3>
@@ -82,17 +83,7 @@
           <div>
             JAVACRYPT - An easy way to encrypt & decrypt text offline (inspired from/by N.O.D.E. & linenoise/asemica). <br />
             <br />
-            How does it work? <br />
-            For the inner workings of the code, the program has a set of rules depending on what key is pressed. <br />
-            The more characters that are pressed, the more complex the encryption will be. <br />
-            Thing thing that makes this different from pgp or gpg, however, is that it allows the user to make the key. <br />
-            If you think of it like entering a long password, possibly the length of a cell phone number, it would be very hard to crack! <br />
-            <br />
-            To use this, you first enter in the text that you want to encrypt into the top box. <br />
-            In the one below it, put in a string of characters that is memorable and shareable. <br />
-            Then, you will see your encrypted message ready to go. <br />
-            Now all you need to do is send the text and let the recipient know about the string you came up with. <br />
-            It will be up to them, at that point, to decrypt the message by following these steps backwards. <br />
+            For the inner workings of the code, this application runs on a series of rules set using JavaScript's bitwise operations. The more characters that are pressed, the more complex the encryption will be. To use this, first enter the text you want to encrypt; then make a key that is long yet memorable (ex. a cell phone number).
           </div>
         </td>
       </tr>
