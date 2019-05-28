@@ -18,8 +18,36 @@
         var str = txt;
         str = str.replace(/\s+/g, ''); // <-- Removes spaces in text
         var code = document.getElementById("digits").value;
+        // All "alerts" will be removed in final product - this is just here to test it
+        if (code == 0) {
+          alert("It's a zero!");
+       }
         if (code == 1) {
           alert("It's a one!");
+       }
+        if (code == 2) {
+          alert("It's a two!");
+       }
+        if (code == 3) {
+          alert("It's a three!");
+       }
+        if (code == 4) {
+          alert("It's a four!");
+       }
+        if (code == 5) {
+          alert("It's a five!");
+       }
+        if (code == 6) {
+          alert("It's a six!");
+       }
+        if (code == 7) {
+          alert("It's a seven!");
+       }
+        if (code == 8) {
+          alert("It's a eight!");
+       }
+        if (code == 9) {
+          alert("It's a nine!");
        }
        document.getElementById("product").innerHTML = str;
       }
@@ -58,7 +86,7 @@
             For the inner workings of the code, the program has a set of rules depending on what key is pressed. <br />
             The more characters that are pressed, the more complex the encryption will be. <br />
             Thing thing that makes this different from pgp or gpg, however, is that it allows the user to make the key. <br />
-            If you think of it like entering a long password, it would be very hard to crack! <br />
+            If you think of it like entering a long password, possibly the length of a cell phone number, it would be very hard to crack! <br />
             <br />
             To use this, you first enter in the text that you want to encrypt into the top box. <br />
             In the one below it, put in a string of characters that is memorable and shareable. <br />
