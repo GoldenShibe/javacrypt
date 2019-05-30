@@ -13,6 +13,45 @@
             }
     </script>
     <script>
+      //js-captcha Copyright robiveli 2018
+      // captcha initial setup
+var myCaptcha = new jCaptcha({ 
+
+    // set callback function
+    callback: function(response, $captchaInputElement) { 
+
+        if (response == 'success') { 
+
+          $captchaInputElement[0].classList.remove('error'); 
+          $captchaInputElement[0].classList.add('success'); 
+          $captchaInputElement[0].placeholder = 'Submit successful!'; 
+
+        } 
+
+        if (response == 'error') { 
+
+          $captchaInputElement[0].classList.remove('success'); 
+          $captchaInputElement[0].classList.add('error'); 
+          $captchaInputElement[0].placeholder = 'Please try again!'; 
+
+        } 
+
+    } 
+
+}); 
+
+// captcha validate on form submit
+document.querySelector('form').addEventListener('submit', function(e) { 
+
+    e.preventDefault(); 
+
+    // captcha validate
+    myCaptcha.validate(); 
+
+});
+      //js-captcha Copyright robiveli 2018
+    </script>
+    <script>
       function encrypt(event) {
         var txt = document.getElementById("words").value;
         var str = txt;
@@ -63,6 +102,14 @@
       <tr>
         <td>
           <div id="Page1">
+            <!-- js-captcha Copyright robiveli 2018 -->
+            <form class="form" action=""> 
+            <input class="jCaptcha" type="text" placeholder="Type in result please"> 
+            <button type="submit">Submit</button> 
+            </form>
+            <!-- js-captcha Copyright robiveli 2018 -->
+          </div>
+          <div id="Page2" style="display:none;">
             <h1>
               <u>Encrypt</u>
             </h1>
