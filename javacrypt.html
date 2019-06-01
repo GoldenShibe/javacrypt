@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <!-- javacrypt (https://github.com/ForgivenNin/javacrypt) is licensed under the GNU General Public License v3.0. Copyright (C) 2007 Free Software Foundation, Inc. (https://fsf.org/) -->
+<!-- Current file size is about 4KB -->
 <html>
   <head>
     <title>
@@ -19,7 +20,6 @@
         str = str.replace(/\s+/g, ''); // <-- Removes spaces in text
         var code = document.getElementById("digits").value;
         // All "alerts" will be removed in final product - this is just here to test it
-        // https://www.w3schools.com/js/js_bitwise.asp (for reference)
         if (code === 0) {
           alert("It's a zero!");
        }
@@ -84,6 +84,22 @@
             JAVACRYPT - An easy way to encrypt & decrypt text offline (inspired from/by N.O.D.E. & linenoise/asemica). <br />
             <br />
             For the inner workings of the code, this application runs on a series of rules set using JavaScript's bitwise operations. The more characters that are pressed, the more complex the encryption will be. To use this, first enter the text you want to encrypt; then make a key that is long yet memorable (ex. a cell phone number).
+          </div>
+          <div id="Page2" display:"none">
+            <h1>
+              <u>Decrypt</u>
+            </h1>
+            <button style="background-color: black; color: white;" onclick="return show('Page1','Page2');">
+              Change
+            </button>
+            <h3>
+              Text
+            </h3>
+            <input id="" type="text" />
+            <h3>
+              Key
+            </h3>
+            <input id="" type="password" oninput="decrypt()" />
           </div>
         </td>
       </tr>
