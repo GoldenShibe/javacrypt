@@ -15,9 +15,76 @@
     </script>
     <script>
       function encrypt(event) {
-        var txt = document.getElementById("words").value;
-        var str = txt;
-        str = str.replace(/\s+/g, ''); // <-- Removes spaces in text
+        var str = document.getElementById("words").value;
+        var res = str.replace(/\s+/|a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|1|2|3|4|5|6|7|8|9|10|~|!|@|#|$|%|^|&|*|(|)|-|_|=|+|[|{|]|}|'|;|:|/|?|.|>|,|<|/gi, function numerize(x) {
+          if (x === "/\s+/g") {return x = "";}
+          if (x === "a") {return x = "10";}
+          if (x === "b") {return x = "20";}
+          if (x === "c") {return x = "30";}
+          if (x === "d") {return x = "40";}
+          if (x === "e") {return x = "50";}
+          if (x === "f") {return x = "60";}
+          if (x === "g") {return x = "70";}
+          if (x === "h") {return x = "80";}
+          if (x === "i") {return x = "90";}
+          if (x === "j") {return x = "100";}
+          if (x === "k") {return x = "110";}
+          if (x === "l") {return x = "120";}
+          if (x === "m") {return x = "130";}
+          if (x === "n") {return x = "140";}
+          if (x === "o") {return x = "150";}
+          if (x === "p") {return x = "160";}
+          if (x === "q") {return x = "170";}
+          if (x === "r") {return x = "180";}
+          if (x === "s") {return x = "190";}
+          if (x === "t") {return x = "200";}
+          if (x === "u") {return x = "210";}
+          if (x === "v") {return x = "220";}
+          if (x === "w") {return x = "230";}
+          if (x === "x") {return x = "240";}
+          if (x === "y") {return x = "250";}
+          if (x === "z") {return x = "260";}
+          if (x === "1") {return x = "270";}
+          if (x === "2") {return x = "280";}
+          if (x === "3") {return x = "290";}
+          if (x === "4") {return x = "300";}
+          if (x === "5") {return x = "310";}
+          if (x === "6") {return x = "320";}
+          if (x === "7") {return x = "330";}
+          if (x === "8") {return x = "340";}
+          if (x === "9") {return x = "350";}
+          if (x === "0") {return x = "360";}
+          if (x === "~") {return x = "370";}
+          if (x === "!") {return x = "380";}
+          if (x === "@") {return x = "390";}
+          if (x === "#") {return x = "400";}
+          if (x === "$") {return x = "410";}
+          if (x === "%") {return x = "420";}
+          if (x === "^") {return x = "430";}
+          if (x === "&") {return x = "440";}
+          if (x === "*") {return x = "450";}
+          if (x === "(") {return x = "460";}
+          if (x === ")") {return x = "470";}
+          if (x === "-") {return x = "480";}
+          if (x === "_") {return x = "490";}
+          if (x === "=") {return x = "500";}
+          if (x === "+") {return x = "510";}
+          if (x === "[") {return x = "520";}
+          if (x === "{") {return x = "530";}
+          if (x === "]") {return x = "540";}
+          if (x === "}") {return x = "550";}
+          if (x === "'") {return x = "560";}
+          if (x === ";") {return x = "570";}
+          if (x === ":") {return x = "580";}
+          if (x === "/") {return x = "590";}
+          if (x === "?") {return x = "600";}
+          if (x === ".") {return x = "610";}
+          if (x === ">") {return x = "620";}
+          if (x === ",") {return x = "630";}
+          if (x === "<") {return x = "640";}
+          else {return x;}
+        });
+        // "/\s+/g" = spaces in text
         var code = document.getElementById("digits").value;
         // All "alerts" will be removed in final product - this is just here to test it
         if (code === 0) {
@@ -50,7 +117,7 @@
         if (code === 9) {
           alert("It's a nine!");
        }
-       document.getElementById("product").innerHTML = str;
+       document.getElementById("product").innerHTML = res;
       }
     </script>
     <!-- Once encryption portion is complete the other part (the decryption) can easily be made -->
