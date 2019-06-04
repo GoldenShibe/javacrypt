@@ -54,7 +54,7 @@
           if (x === "8") {return x = "340";}
           if (x === "9") {return x = "350";}
           if (x === "0") {return x = "360";}
-          if (x === "~") {return x = "370";}
+        /*if (x === "~") {return x = "370";}
           if (x === "!") {return x = "380";}
           if (x === "@") {return x = "390";}
           if (x === "#") {return x = "400";}
@@ -81,7 +81,7 @@
           if (x === ".") {return x = "610";}
           if (x === ">") {return x = "620";}
           if (x === ",") {return x = "630";}
-          if (x === "<") {return x = "640";}
+          if (x === "<") {return x = "640";}*/
           else {return x;}
         });
         // "/\s+/g" = spaces in text
@@ -145,7 +145,7 @@
             </h3>
             <input id="digits" type="password" oninput="encrypt(event)" />
           </div>
-          <div id="Page2" display:"none">
+          <div id="Page2" style="display:none;">
             <h1>
               <u>Decrypt</u>
             </h1>
@@ -164,7 +164,7 @@
         </td>
         <td style="text-align: right;">
           <div>
-            JAVACRYPT - An easy way to encrypt & decrypt text offline (inspired from/by N.O.D.E. & linenoise/asemica). <br />
+            JAVACRYPT - An easy way to encrypt & decrypt text offline (inspired by linenoise/asemica). <br />
             <br />
             For the inner workings of the code, this application runs on a series of rules set using JavaScript's bitwise operations. The more characters that are pressed, the more complex the encryption will be. To use this, first enter the text you want to encrypt; then make a key that is long yet memorable (ex. a cell phone number).
           </div>
