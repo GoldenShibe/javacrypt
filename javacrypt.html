@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <!-- javacrypt (https://github.com/ForgivenNin/javacrypt) is licensed under the GNU General Public License v3.0. Copyright (C) 2007 Free Software Foundation, Inc. (https://fsf.org/) -->
-<!-- Keep an eye on the file size! -->
 <html>
   <head>
     <title>
@@ -15,7 +14,7 @@
     </script>
     <script>
       function encrypt(event) {
-        var str = document.getElementById("words").value;
+        var str = document.getElementById("ewords").value;
         var res = str.replace(/\s+|a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|1|2|3|4|5|6|7|8|9|10|/gi, function numerize(x) {
           if (x === "a") {return x = "10";}
           if (x === "b") {return x = "20";}
@@ -55,7 +54,7 @@
           if (x === "0") {return x = "360";}
           else {return "";}
         });
-        var code = document.getElementById("digits").value;
+        var code = document.getElementById("edigits").value;
         if (code === 0) {
           alert("It's a zero!");
        }
@@ -86,7 +85,7 @@
         if (code === 9) {
           alert("It's a nine!");
        }
-       document.getElementById("product").innerHTML = res;
+       document.getElementById("eproduct").innerHTML = res;
       }
     </script>
     <!-- Once encryption portion is complete the other part (the decryption) can easily be made -->
@@ -109,12 +108,12 @@
               Text <br />
               (Make sure you type in what you want to say before entering in your code)
             </h3>
-            <input id="words" type="text" />
+            <input id="ewords" type="text" />
             <h3>
               Key <br />
               (Numbers 0-9)
             </h3>
-            <input id="digits" type="password" oninput="encrypt(event)" />
+            <input id="edigits" type="password" oninput="encrypt(event)" />
           </div>
           <div id="Page2" style="display:none;">
             <h1>
@@ -135,18 +134,25 @@
         </td>
         <td style="text-align: right;">
           <div>
-            JAVACRYPT - An easy way to encrypt & decrypt text offline (inspired by linenoise/asemica). <br />
+            JAVACRYPT - An easy way to encrypt & decrypt text offline (inspired by linenoise/asemica, challenged by N.O.D.E.). <br />
             <br />
             For the inner workings of the code, this application runs on a series of rules set using JavaScript's bitwise operations. The more characters that are pressed, the more complex the encryption will be. To use this, first enter the text you want to encrypt; then make a key that is long yet memorable (ex. a cell phone number).
           </div>
         </td>
       </tr>
     </table>
-    <div style="text-align: center;">
+    <div id="Page1" style="text-align: center;">
       <h3>
         Your Message
       </h3>
-      <p id="product" style="background-color: white; border: solid 1px;">
+      <p id="eproduct" style="background-color: white; border: solid 1px;">
+      </p>
+    </div>
+    <div id="Page2" style="text-align: center; display:none;">
+      <h3>
+        Your Message
+      </h3>
+      <p id="dproduct" style="background-color: white; border: solid 1px;">
       </p>
     </div>
   </body>
