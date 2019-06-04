@@ -16,8 +16,7 @@
     <script>
       function encrypt(event) {
         var str = document.getElementById("words").value;
-        var res = str.replace(/\s+/|a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|1|2|3|4|5|6|7|8|9|10|~|!|@|#|$|%|^|&|*|(|)|-|_|=|+|[|{|]|}|'|;|:|/|?|.|>|,|<|/gi, function numerize(x) {
-          if (x === "/\s+/g") {return x = "";}
+        var res = str.replace(/\s+|a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|1|2|3|4|5|6|7|8|9|10|/gi, function numerize(x) {
           if (x === "a") {return x = "10";}
           if (x === "b") {return x = "20";}
           if (x === "c") {return x = "30";}
@@ -54,39 +53,9 @@
           if (x === "8") {return x = "340";}
           if (x === "9") {return x = "350";}
           if (x === "0") {return x = "360";}
-        /*if (x === "~") {return x = "370";}
-          if (x === "!") {return x = "380";}
-          if (x === "@") {return x = "390";}
-          if (x === "#") {return x = "400";}
-          if (x === "$") {return x = "410";}
-          if (x === "%") {return x = "420";}
-          if (x === "^") {return x = "430";}
-          if (x === "&") {return x = "440";}
-          if (x === "*") {return x = "450";}
-          if (x === "(") {return x = "460";}
-          if (x === ")") {return x = "470";}
-          if (x === "-") {return x = "480";}
-          if (x === "_") {return x = "490";}
-          if (x === "=") {return x = "500";}
-          if (x === "+") {return x = "510";}
-          if (x === "[") {return x = "520";}
-          if (x === "{") {return x = "530";}
-          if (x === "]") {return x = "540";}
-          if (x === "}") {return x = "550";}
-          if (x === "'") {return x = "560";}
-          if (x === ";") {return x = "570";}
-          if (x === ":") {return x = "580";}
-          if (x === "/") {return x = "590";}
-          if (x === "?") {return x = "600";}
-          if (x === ".") {return x = "610";}
-          if (x === ">") {return x = "620";}
-          if (x === ",") {return x = "630";}
-          if (x === "<") {return x = "640";}*/
-          else {return x;}
+          else {return "";}
         });
-        // "/\s+/g" = spaces in text
         var code = document.getElementById("digits").value;
-        // All "alerts" will be removed in final product - this is just here to test it
         if (code === 0) {
           alert("It's a zero!");
        }
@@ -137,11 +106,13 @@
               Change
             </button>
             <h3>
-              Text (If you have to include numbers in your message, you must write them as words or else the message will not be decipherable)
+              Text <br />
+              (Make sure you type in what you want to say before entering in your code)
             </h3>
             <input id="words" type="text" />
             <h3>
-              Key (Use numbers 0-9 only)
+              Key <br />
+              (Numbers 0-9)
             </h3>
             <input id="digits" type="password" oninput="encrypt(event)" />
           </div>
@@ -175,7 +146,7 @@
       <h3>
         Your Message
       </h3>
-      <p id="product">
+      <p id="product" style="background-color: white; border: solid 1px;">
       </p>
     </div>
   </body>
