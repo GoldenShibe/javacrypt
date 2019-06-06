@@ -88,7 +88,7 @@
        document.getElementById("eproduct").innerHTML = res;
       }
     </script>
-    <!-- Once encryption portion is complete the other part (the decryption) can easily be made -->
+    <!-- Once encryption portion is complete the other part (the decryption) can easily be made. You may want to comment one of the parts when doing so, just for clarity. -->
   </head>
   <body style="background-color: gold; font-family: sans-serif;">
     <noscript>
@@ -108,12 +108,12 @@
               Text <br />
               (Make sure you type in what you want to say before entering in your code)
             </h3>
-            <input id="ewords" type="text" />
+            <input id="ewords" type="text" oninput="encrypt(event)" />
             <h3>
               Key <br />
               (Numbers 0-9)
             </h3>
-            <input id="edigits" type="password" oninput="encrypt(event)" />
+            <input id="edigits" type="password" />
           </div>
           <div id="Page2" style="display:none;">
             <h1>
@@ -125,11 +125,11 @@
             <h3>
               Text
             </h3>
-            <input id="" type="text" />
+            <input id="" type="text" oninput="decrypt()" />
             <h3>
               Key
             </h3>
-            <input id="" type="password" oninput="decrypt()" />
+            <input id="" type="password" />
           </div>
         </td>
         <td style="text-align: right;">
