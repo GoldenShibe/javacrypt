@@ -14,8 +14,40 @@
     </script>
     <script>
       function encrypt(event) {
-        var str = document.getElementById("ewords").value;
-        var res = str.replace(/\s+|a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|1|2|3|4|5|6|7|8|9|10|/gi, function numerize(x) {
+        var code = document.getElementById("edigits").value;
+        if (code === 0) {
+          alert("It's a zero!");
+       }
+        if (code === 1) {
+          alert("It's a one!");
+       }
+        if (code === 2) {
+          alert("It's a two!");
+       }
+        if (code === 3) {
+          alert("It's a three!");
+       }
+        if (code === 4) {
+          alert("It's a four!");
+       }
+        if (code === 5) {
+          alert("It's a five!");
+       }
+        if (code === 6) {
+          alert("It's a six!");
+       }
+        if (code === 7) {
+          alert("It's a seven!");
+       }
+        if (code === 8) {
+          alert("It's a eight!");
+       }
+        if (code === 9) {
+          alert("It's a nine!");
+       }
+       // The instructions are run in order, and this should be kept in mind when coming up with rules as the spaces inbetween each word, because it may determine if this even works.
+       var str = document.getElementById("ewords").value;
+       var res = str.replace(/\s+|a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|1|2|3|4|5|6|7|8|9|0|/gi, function numerize(x) {
           if (x === "a") {return x = "10";}
           if (x === "b") {return x = "20";}
           if (x === "c") {return x = "30";}
@@ -54,37 +86,6 @@
           if (x === "0") {return x = "360";}
           else {return "";}
         });
-        var code = document.getElementById("edigits").value;
-        if (code === 0) {
-          alert("It's a zero!");
-       }
-        if (code === 1) {
-          alert("It's a one!");
-       }
-        if (code === 2) {
-          alert("It's a two!");
-       }
-        if (code === 3) {
-          alert("It's a three!");
-       }
-        if (code === 4) {
-          alert("It's a four!");
-       }
-        if (code === 5) {
-          alert("It's a five!");
-       }
-        if (code === 6) {
-          alert("It's a six!");
-       }
-        if (code === 7) {
-          alert("It's a seven!");
-       }
-        if (code === 8) {
-          alert("It's a eight!");
-       }
-        if (code === 9) {
-          alert("It's a nine!");
-       }
        document.getElementById("eproduct").innerHTML = res;
       }
     </script>
@@ -125,11 +126,11 @@
             <h3>
               Text
             </h3>
-            <input id="" type="text" oninput="decrypt()" />
+            <input id="dwords" type="text" oninput="decrypt()" />
             <h3>
               Key
             </h3>
-            <input id="" type="password" />
+            <input id="ddigits" type="password" />
           </div>
         </td>
         <td style="text-align: right;">
