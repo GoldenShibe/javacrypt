@@ -5,6 +5,7 @@
     <title>
       javacrypt
     </title>
+    <meta charset="UTF-8">
     <script>
       function show(shown, hidden) {
                 document.getElementById(shown).style.display = 'block';
@@ -13,6 +14,14 @@
             }
     </script>
     <script>
+      function option(onclick) {
+        document.getElementById('ewords').type = "text";
+        document.getElementById('edigits').type = "text";
+        document.getElementById('dwords').type = "text";
+        document.getElementById('ddigits').type = "text";
+        return false;
+      }
+
       function encrypt(event) {
         var code = document.getElementById("edigits").value;
         if (code === 0) {
@@ -44,6 +53,10 @@
        }
         if (code === 9) {
           alert("It's a nine!");
+       }
+       // Find how to get total # of edigits
+       if (code < 10) {
+
        }
        // The instructions are run in order, and this should be kept in mind when coming up with rules as the spaces inbetween each word, because it may determine if this even works.
        var str = document.getElementById("ewords").value;
@@ -103,13 +116,14 @@
               <u>Encrypt</u>
             </h1>
             <button style="background-color: white; color: black;" onclick="return show('Page2','Page1');">
-              Change
+              Decrypt
             </button>
+            <button onclick="option(onclick)"> View </button>
             <h3>
               Text <br />
               (Make sure you type in what you want to say before entering in your code)
             </h3>
-            <input id="ewords" type="text" oninput="encrypt(event)" />
+            <input id="ewords" type="password" oninput="encrypt(event)" />
             <h3>
               Key <br />
               (Numbers 0-9)
@@ -121,12 +135,13 @@
               <u>Decrypt</u>
             </h1>
             <button style="background-color: black; color: white;" onclick="return show('Page1','Page2');">
-              Change
+              Encrypt
             </button>
+            <button onclick="option(onclick)"> View </button>
             <h3>
               Text
             </h3>
-            <input id="dwords" type="text" oninput="decrypt()" />
+            <input id="dwords" type="password" oninput="decrypt()" />
             <h3>
               Key
             </h3>
@@ -137,7 +152,7 @@
           <div>
             JAVACRYPT - An easy way to encrypt & decrypt text offline (inspired by linenoise/asemica, challenged by N.O.D.E.). <br />
             <br />
-            For the inner workings of the code, this application runs on a series of rules set using JavaScript's bitwise operations. The more characters that are pressed, the more complex the encryption will be. To use this, first enter the text you want to encrypt; then make a key that is long yet memorable (ex. a cell phone number).
+            For the inner workings of the code, this application runs on a series of rules set using JavaScript's bitwise operations. The more characters that are pressed, the more complex the encryption will be. To use this, first enter the text you want to encrypt; then make a key that is long yet memorable (ex. a cell phone number). If you would like to view what you are typing, you can use the button, but at the moment it is not able to be clicked again to rever back to the password mode. To reset it, refresh the page.
           </div>
         </td>
       </tr>
