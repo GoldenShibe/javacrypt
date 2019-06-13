@@ -96,9 +96,47 @@
     <script>
       function encrypt(event) {
         var code = document.getElementById("edigits").value;
-        if (code === 0) {
-          alert("It's a zero!");
-       }
+       // The instructions are run in order, and this should be kept in mind when coming up with rules as the spaces inbetween each word, because it may determine if this even works.
+       var str = document.getElementById("ewords").value;
+       var res = str.replace(/\s+|a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|1|2|3|4|5|6|7|8|9|0|/gi, function numerize(x) {
+          if (x === "a") {return x = "9";}
+          if (x === "b") {return x = "19";}
+          if (x === "c") {return x = "29";}
+          if (x === "d") {return x = "39";}
+          if (x === "e") {return x = "49";}
+          if (x === "f") {return x = "59";}
+          if (x === "g") {return x = "69";}
+          if (x === "h") {return x = "79";}
+          if (x === "i") {return x = "89";}
+          if (x === "j") {return x = "109";}
+          if (x === "k") {return x = "119";}
+          if (x === "l") {return x = "129";}
+          if (x === "m") {return x = "139";}
+          if (x === "n") {return x = "149";}
+          if (x === "o") {return x = "159";}
+          if (x === "p") {return x = "169";}
+          if (x === "q") {return x = "179";}
+          if (x === "r") {return x = "189";}
+          if (x === "s") {return x = "209";}
+          if (x === "t") {return x = "219";}
+          if (x === "u") {return x = "229";}
+          if (x === "v") {return x = "239";}
+          if (x === "w") {return x = "249";}
+          if (x === "x") {return x = "259";}
+          if (x === "y") {return x = "269";}
+          if (x === "z") {return x = "279";}
+          if (x === "1") {return x = "289";}
+          if (x === "2") {return x = "309";}
+          if (x === "3") {return x = "319";}
+          if (x === "4") {return x = "329";}
+          if (x === "5") {return x = "339";}
+          if (x === "6") {return x = "349";}
+          if (x === "7") {return x = "359";}
+          if (x === "8") {return x = "369";}
+          if (x === "9") {return x = "379";}
+          if (x === "0") {return x = "389";}
+          else {return "";}
+        });
         if (code === 1) {
           alert("It's a one!");
        }
@@ -126,55 +164,95 @@
         if (code === 9) {
           alert("It's a nine!");
        }
-       // Find how to get total # of edigits
+       if (code === 0) {
+         alert("It's a zero!");
+      }
        if (code < 10) {
-
+         // Find how to get total # of digits
        }
-       // The instructions are run in order, and this should be kept in mind when coming up with rules as the spaces inbetween each word, because it may determine if this even works.
-       var str = document.getElementById("ewords").value;
-       var res = str.replace(/\s+|a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|1|2|3|4|5|6|7|8|9|0|/gi, function numerize(x) {
-          if (x === "a") {return x = "10";}
-          if (x === "b") {return x = "20";}
-          if (x === "c") {return x = "30";}
-          if (x === "d") {return x = "40";}
-          if (x === "e") {return x = "50";}
-          if (x === "f") {return x = "60";}
-          if (x === "g") {return x = "70";}
-          if (x === "h") {return x = "80";}
-          if (x === "i") {return x = "90";}
-          if (x === "j") {return x = "100";}
-          if (x === "k") {return x = "110";}
-          if (x === "l") {return x = "120";}
-          if (x === "m") {return x = "130";}
-          if (x === "n") {return x = "140";}
-          if (x === "o") {return x = "150";}
-          if (x === "p") {return x = "160";}
-          if (x === "q") {return x = "170";}
-          if (x === "r") {return x = "180";}
-          if (x === "s") {return x = "190";}
-          if (x === "t") {return x = "200";}
-          if (x === "u") {return x = "210";}
-          if (x === "v") {return x = "220";}
-          if (x === "w") {return x = "230";}
-          if (x === "x") {return x = "240";}
-          if (x === "y") {return x = "250";}
-          if (x === "z") {return x = "260";}
-          if (x === "1") {return x = "270";}
-          if (x === "2") {return x = "280";}
-          if (x === "3") {return x = "290";}
-          if (x === "4") {return x = "300";}
-          if (x === "5") {return x = "310";}
-          if (x === "6") {return x = "320";}
-          if (x === "7") {return x = "330";}
-          if (x === "8") {return x = "340";}
-          if (x === "9") {return x = "350";}
-          if (x === "0") {return x = "360";}
-          else {return "";}
-        });
-       document.getElementById("eproduct").innerHTML = res;
+       document.getElementById("product").innerHTML = res;
       }
     </script>
-    <!-- Once encryption portion is complete the other part (the decryption) can easily be made. You may want to comment one of the parts when doing so, just for clarity. -->
+    <script>
+      function decrypt(event) {
+        var code = document.getElementById("ddigits").value;
+       // The instructions are run in order, and this should be kept in mind when coming up with rules as the spaces inbetween each word, because it may determine if this even works.
+       var str = document.getElementById("dwords").value;
+       var res = str.replace(/\s+|9|19|29|39|49|39|69|79|89|109|119|129|139|149|159|169|179|189|209|219|229|239|249|259|269|279|289|309|319|329|339|349|359|369|379|389|/gi, function numerize(x) {
+          if (x === "9") {return x = "a";}
+          if (x === "19") {return x = "b";}
+          if (x === "29") {return x = "c";}
+          if (x === "39") {return x = "d";}
+          if (x === "49") {return x = "e";}
+          if (x === "59") {return x = "f";}
+          if (x === "69") {return x = "g";}
+          if (x === "79") {return x = "h";}
+          if (x === "89") {return x = "i";}
+          if (x === "109") {return x = "j";}
+          if (x === "119") {return x = "k";}
+          if (x === "129") {return x = "l";}
+          if (x === "139") {return x = "m";}
+          if (x === "149") {return x = "n";}
+          if (x === "159") {return x = "o";}
+          if (x === "169") {return x = "p";}
+          if (x === "179") {return x = "q";}
+          if (x === "189") {return x = "r";}
+          if (x === "209") {return x = "s";}
+          if (x === "219") {return x = "t";}
+          if (x === "229") {return x = "u";}
+          if (x === "239") {return x = "v";}
+          if (x === "249") {return x = "w";}
+          if (x === "259") {return x = "x";}
+          if (x === "269") {return x = "y";}
+          if (x === "279") {return x = "z";}
+          if (x === "289") {return x = "1";}
+          if (x === "309") {return x = "2";}
+          if (x === "319") {return x = "3";}
+          if (x === "329") {return x = "4";}
+          if (x === "339") {return x = "5";}
+          if (x === "349") {return x = "6";}
+          if (x === "359") {return x = "7";}
+          if (x === "369") {return x = "8";}
+          if (x === "379") {return x = "9";}
+          if (x === "389") {return x = "0";}
+          else {return " ";}
+        });
+        if (code === 1) {
+          alert("It's a one!");
+       }
+        if (code === 2) {
+          alert("It's a two!");
+       }
+        if (code === 3) {
+          alert("It's a three!");
+       }
+        if (code === 4) {
+          alert("It's a four!");
+       }
+        if (code === 5) {
+          alert("It's a five!");
+       }
+        if (code === 6) {
+          alert("It's a six!");
+       }
+        if (code === 7) {
+          alert("It's a seven!");
+       }
+        if (code === 8) {
+          alert("It's a eight!");
+       }
+        if (code === 9) {
+          alert("It's a nine!");
+       }
+       if (code === 0) {
+         alert("It's a zero!");
+      }
+       if (code < 10) {
+         // Find how to get total # of digits
+       }
+       document.getElementById("product").innerHTML = res;
+      }
+    </script>
   </head>
   <body style="background-color: gold; font-family: sans-serif;">
     <noscript>
@@ -211,7 +289,7 @@
             <h3>
               Text
             </h3>
-            <input id="dwords" type="password" oninput="decrypt()" />
+            <input id="dwords" type="password" oninput="decrypt(event)" />
             <h3>
               Key
             </h3>
@@ -239,14 +317,7 @@
       <h3>
         Your Message
       </h3>
-      <p id="eproduct" style="background-color: white; border: solid 1px;">
-      </p>
-    </div>
-    <div id="Page2" style="text-align: center; display:none;">
-      <h3>
-        Your Message
-      </h3>
-      <p id="dproduct" style="background-color: white; border: solid 1px;">
+      <p id="product" style="background-color: white; border: solid 1px;">
       </p>
     </div>
   </body>
