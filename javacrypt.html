@@ -188,11 +188,15 @@
               <u>Encrypt</u>
             </h1>
             <button style="background-color: white; color: black;" onclick="return show('Page2','Page1');">Decrypt</button>
+            <br />
+            <br />
             <h3>
               Text <br />
               (Make sure you type in what you want to say before entering in your code)
             </h3>
             <input id="ewords" type="password" oninput="encrypt(event)" />
+            <br />
+            <br />
             <h3>
               Key <br />
               (Numbers 0-9)
@@ -213,22 +217,20 @@
             </h3>
             <input id="ddigits" type="password" />
           </div>
+          <br />
+          <br />
+          <b>View Input</b>
+          <br />
+          <label class="switch">
+            <input id="lever" type="checkbox" onclick="lever()" />
+            <span class="slider round"></span>
+          </label>
         </td>
         <td style="text-align: right;">
           <div>
             JAVACRYPT - An easy way to encrypt & decrypt text offline (inspired by linenoise/asemica, challenged by N.O.D.E.). <br />
             <br />
             For the inner workings of the code, this application runs on a series of rules set using JavaScript's bitwise operations. The more characters that are pressed, the more complex the encryption will be. To use this, first enter the text you want to encrypt; then make a key that is long yet memorable (ex. a cell phone number). If you would like to view what you are typing, you can use the button, but at the moment it is not able to be clicked again to rever back to the password mode. To reset it, refresh the page.
-            <br />
-            <br />
-            <br />
-            <u>View Input</u>
-            <br />
-            <!-- Adjust script to fit the new type of button -->
-            <label class="switch">
-              <input id="lever" type="checkbox" onclick="lever()" />
-              <span class="slider round"></span>
-            </label>
           </div>
         </td>
       </tr>
