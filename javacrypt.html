@@ -16,7 +16,7 @@
       height: 34px;
     }
 
-    .switch input { 
+    .switch input {
       opacity: 0;
       width: 0;
       height: 0;
@@ -47,7 +47,7 @@
     }
 
     input:checked + .slider {
-      background-color: Gold;
+      background-color: GoldenRod;
     }
 
     input:focus + .slider {
@@ -76,14 +76,24 @@
             }
     </script>
     <script>
-      function option(onclick) {
+    function lever(){
+      var x = document.getElementById('lever').checked;
+      if(x === true){
         document.getElementById('ewords').type = "text";
         document.getElementById('edigits').type = "text";
         document.getElementById('dwords').type = "text";
         document.getElementById('ddigits').type = "text";
         return false;
+      } else {
+        document.getElementById('ewords').type = "password";
+        document.getElementById('edigits').type = "password";
+        document.getElementById('dwords').type = "password";
+        document.getElementById('ddigits').type = "password";
+        return false;
       }
-
+    }
+    </script>
+    <script>
       function encrypt(event) {
         var code = document.getElementById("edigits").value;
         if (code === 0) {
@@ -178,11 +188,6 @@
               <u>Encrypt</u>
             </h1>
             <button style="background-color: white; color: black;" onclick="return show('Page2','Page1');">Decrypt</button>
-            <!-- Adjust script to fit the new type of button -->
-            <label class="switch">
-              <input type="checkbox" />
-              <span class="slider round"></span>
-            </label>
             <h3>
               Text <br />
               (Make sure you type in what you want to say before entering in your code)
@@ -199,11 +204,6 @@
               <u>Decrypt</u>
             </h1>
             <button style="background-color: black; color: white;" onclick="return show('Page1','Page2');">Encrypt</button>
-            <!-- Adjust script to fit the new type of button -->
-            <label class="switch">
-              <input type="checkbox" />
-              <span class="slider round"></span>
-            </label>
             <h3>
               Text
             </h3>
@@ -219,6 +219,16 @@
             JAVACRYPT - An easy way to encrypt & decrypt text offline (inspired by linenoise/asemica, challenged by N.O.D.E.). <br />
             <br />
             For the inner workings of the code, this application runs on a series of rules set using JavaScript's bitwise operations. The more characters that are pressed, the more complex the encryption will be. To use this, first enter the text you want to encrypt; then make a key that is long yet memorable (ex. a cell phone number). If you would like to view what you are typing, you can use the button, but at the moment it is not able to be clicked again to rever back to the password mode. To reset it, refresh the page.
+            <br />
+            <br />
+            <br />
+            <u>View Input</u>
+            <br />
+            <!-- Adjust script to fit the new type of button -->
+            <label class="switch">
+              <input id="lever" type="checkbox" onclick="lever()" />
+              <span class="slider round"></span>
+            </label>
           </div>
         </td>
       </tr>
