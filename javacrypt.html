@@ -95,8 +95,7 @@
     </script>
     <script>
       function encrypt(event) {
-        var code = document.getElementById("edigits").value;
-       // The instructions are run in order, and this should be kept in mind when coming up with rules as the spaces inbetween each word, because it may determine if this even works.
+       var code = document.getElementById("edigits").value;
        var str = document.getElementById("ewords").value;
        var res = str.replace(/\s+|a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|1|2|3|4|5|6|7|8|9|0|/gi, function numerize(x) {
           if (x === "a") {return x = "9";}
@@ -137,47 +136,76 @@
           if (x === "0") {return x = "389";}
           else {return "";}
         });
-        if (code === 1) {
-          alert("It's a one!");
-       }
-        if (code === 2) {
-          alert("It's a two!");
-       }
-        if (code === 3) {
-          alert("It's a three!");
-       }
-        if (code === 4) {
-          alert("It's a four!");
-       }
-        if (code === 5) {
-          alert("It's a five!");
-       }
-        if (code === 6) {
-          alert("It's a six!");
-       }
-        if (code === 7) {
-          alert("It's a seven!");
-       }
-        if (code === 8) {
-          alert("It's a eight!");
-       }
-        if (code === 9) {
-          alert("It's a nine!");
-       }
-       if (code === 0) {
-         alert("It's a zero!");
+       if (code === 1) {
+         alert("It's a one!");
       }
-       if (code < 10) {
-         // Find how to get total # of digits
-       }
+       if (code === 2) {
+         alert("It's a two!");
+      }
+       if (code === 3) {
+         alert("It's a three!");
+      }
+       if (code === 4) {
+         alert("It's a four!");
+      }
+       if (code === 5) {
+         alert("It's a five!");
+      }
+       if (code === 6) {
+         alert("It's a six!");
+      }
+       if (code === 7) {
+         alert("It's a seven!");
+      }
+       if (code === 8) {
+         alert("It's a eight!");
+      }
+       if (code === 9) {
+         alert("It's a nine!");
+      }
+      if (code === 0) {
+        alert("It's a zero!");
+     }
+      if (code < 10) {
+        // Find how to get total # of digits
+     }
        document.getElementById("product").innerHTML = res;
       }
     </script>
     <script>
       function decrypt(event) {
-        var code = document.getElementById("ddigits").value;
-       // The instructions are run in order, and this should be kept in mind when coming up with rules as the spaces inbetween each word, because it may determine if this even works.
+       var code = document.getElementById("ddigits").value;
        var str = document.getElementById("dwords").value;
+       if (code === 1) {
+         alert("It's a one!");
+      }
+       if (code === 2) {
+         alert("It's a two!");
+      }
+       if (code === 3) {
+         alert("It's a three!");
+      }
+       if (code === 4) {
+         alert("It's a four!");
+      }
+       if (code === 5) {
+         alert("It's a five!");
+      }
+       if (code === 6) {
+         alert("It's a six!");
+      }
+       if (code === 7) {
+         alert("It's a seven!");
+      }
+       if (code === 8) {
+         alert("It's a eight!");
+      }
+       if (code === 9) {
+         alert("It's a nine!");
+      }
+      if (code === 0) {
+        alert("It's a zero!");
+     }
        var res = str.replace(/\s+|9|19|29|39|49|39|69|79|89|109|119|129|139|149|159|169|179|189|209|219|229|239|249|259|269|279|289|309|319|329|339|349|359|369|379|389|/gi, function numerize(x) {
           if (x === "9") {return x = "a";}
           if (x === "19") {return x = "b";}
@@ -217,39 +245,6 @@
           if (x === "389") {return x = "0";}
           else {return " ";}
         });
-        if (code === 1) {
-          alert("It's a one!");
-       }
-        if (code === 2) {
-          alert("It's a two!");
-       }
-        if (code === 3) {
-          alert("It's a three!");
-       }
-        if (code === 4) {
-          alert("It's a four!");
-       }
-        if (code === 5) {
-          alert("It's a five!");
-       }
-        if (code === 6) {
-          alert("It's a six!");
-       }
-        if (code === 7) {
-          alert("It's a seven!");
-       }
-        if (code === 8) {
-          alert("It's a eight!");
-       }
-        if (code === 9) {
-          alert("It's a nine!");
-       }
-       if (code === 0) {
-         alert("It's a zero!");
-      }
-       if (code < 10) {
-         // Find how to get total # of digits
-       }
        document.getElementById("product").innerHTML = res;
       }
     </script>
