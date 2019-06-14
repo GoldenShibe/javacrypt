@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-    /* Code by how-to tutorial on w3schools.com (https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_switch) */
+    /* Code from w3schools.com (https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_switch) */
     .switch {
       position: relative;
       display: inline-block;
@@ -251,7 +251,7 @@
   </head>
   <body style="background-color: gold; font-family: sans-serif;">
     <noscript>
-      This application requires JavaScript to be enabled.
+      This application requires JavaScript to be enabled. Refresh the page after activation.
     </noscript>
     <table style="width: 100%;">
       <tr>
@@ -274,7 +274,9 @@
               Key <br />
               (Numbers 0-9)
             </h3>
-            <input id="edigits" type="password" />
+            <form>
+              <input id="edigits" name="code" type="password" /> <button onclick="download.php; alert('Downloaded.'); console.log('Downloaded.')">Download</button>
+            </form>
           </div>
           <div id="Page2" style="display:none;">
             <h1>
@@ -288,7 +290,9 @@
             <h3>
               Key
             </h3>
-            <input id="ddigits" type="password" />
+            <form method="post">
+              <input id="ddigits" name="code" type="password" /> <button onclick="download.php; alert('Downloaded.'); console.log('Downloaded.')">Download</button>
+            </form>
           </div>
           <br />
           <br />
@@ -301,9 +305,12 @@
         </td>
         <td style="text-align: right;">
           <div>
-            JAVACRYPT - An easy way to encrypt & decrypt text offline (inspired by linenoise/asemica, challenged by N.O.D.E.). <br />
+            JAVACRYPT - An easy way to encrypt & decrypt text offline. <br />
             <br />
-            For the inner workings of the code, this application runs on a series of rules set using JavaScript's bitwise operations. The more characters that are pressed, the more complex the encryption will be. To use this, first enter the text you want to encrypt; then make a key that is long yet memorable (ex. a cell phone number).
+            For the inner workings of the code, this application runs on a series of rules set using JavaScript.
+            The more characters that are pressed, the more complex the encryption will be. Only English letters and numbers work so far
+            To use this, first enter the text you want to encrypt; then make a key that is long yet memorable (ex. a cell phone number).
+            If you chose to download your key, it should all go on the same file each time.
           </div>
         </td>
       </tr>
