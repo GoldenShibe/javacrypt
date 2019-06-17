@@ -13,83 +13,29 @@
             }
     </script>
     <script>
-      // js-captcha Copyright robiveli 2018
+      // js-captcha/robiveli Copyright 2018
       // captcha initial setup
-var myCaptcha = new jCaptcha({ 
-
-    // set callback function
-    callback: function(response, $captchaInputElement) { 
-
-        if (response == 'success') { 
-
-          $captchaInputElement[0].classList.remove('error'); 
-          $captchaInputElement[0].classList.add('success'); 
-          $captchaInputElement[0].placeholder = 'Submit successful!'; 
-
+      var myCaptcha = new jCaptcha({ 
+      // set callback function
+        callback: function(response, $captchaInputElement) { 
+          if (response == 'success') { 
+            $captchaInputElement[0].classList.remove('error'); 
+            $captchaInputElement[0].classList.add('success'); 
+            $captchaInputElement[0].placeholder = 'Submit successful!'; 
+          } 
+          if (response == 'error') { 
+            $captchaInputElement[0].classList.remove('success'); 
+            $captchaInputElement[0].classList.add('error'); 
+            $captchaInputElement[0].placeholder = 'Please try again!'; 
+          } 
         } 
-
-        if (response == 'error') { 
-
-          $captchaInputElement[0].classList.remove('success'); 
-          $captchaInputElement[0].classList.add('error'); 
-          $captchaInputElement[0].placeholder = 'Please try again!'; 
-
-        } 
-
-    } 
-
-}); 
-
-// captcha validate on form submit
-document.querySelector('form').addEventListener('submit', function(e) { 
-
-    e.preventDefault(); 
-
-    // captcha validate
-    myCaptcha.validate(); 
-
-});
-    </script>
-    <script>
-      function encrypt(event) {
-        var txt = document.getElementById("words").value;
-        var str = txt;
-        str = str.replace(/\s+/g, ''); // <-- Removes spaces in text
-        var code = document.getElementById("digits").value;
-        // All "alerts" will be removed in final product - this is just here to test it
-        // https://www.w3schools.com/js/js_bitwise.asp (for reference)
-        if (code === 0) {
-          alert("It's a zero!");
-       }
-        if (code === 1) {
-          alert("It's a one!");
-       }
-        if (code === 2) {
-          alert("It's a two!");
-       }
-        if (code === 3) {
-          alert("It's a three!");
-       }
-        if (code === 4) {
-          alert("It's a four!");
-       }
-        if (code === 5) {
-          alert("It's a five!");
-       }
-        if (code === 6) {
-          alert("It's a six!");
-       }
-        if (code === 7) {
-          alert("It's a seven!");
-       }
-        if (code === 8) {
-          alert("It's a eight!");
-       }
-        if (code === 9) {
-          alert("It's a nine!");
-       }
-       document.getElementById("product").innerHTML = str;
-      }
+      }); 
+      // captcha validate on form submit
+      document.querySelector('form').addEventListener('submit', function(e) { 
+        e.preventDefault(); 
+        // captcha validate
+        myCaptcha.validate(); 
+      });
     </script>
     <!-- Once encryption portion is complete the other part (the decryption) can easily be made -->
   </head>
@@ -101,12 +47,17 @@ document.querySelector('form').addEventListener('submit', function(e) {
       <tr>
         <td>
           <div id="Page1">
-            <!-- js-captcha copyright robiveli 2018 -->
-            <form class="form" action=""> 
-            <canvas class="jCaptchaText" width="50" height="15"></canvas>
-            <input class="jCaptcha" type="text" placeholder="Type in result please"> 
-            <button type="submit">Submit</button> 
-            </form>
+            <!-- js-captcha/robiveli Copyright 2018 -->
+            <main>
+              <form class="form" action> 
+              <canvas class="jCaptchaText" width="50" height="15"></canvas>
+              <input class="jCaptcha" type="text" placeholder="Type in result please">
+                <div pseudo="placeholder">Type in result please</div>
+                <div contenteditable="plaintext-only"></div>
+              </input>
+              <button type="submit">Submit</button> 
+              </form>
+            </main>
           </div>
           <div id="Page2" style="display:none;">
             <h1>
@@ -127,9 +78,8 @@ document.querySelector('form').addEventListener('submit', function(e) {
         </td>
         <td style="text-align: right;">
           <div>
-            JAVACRYPT - An easy way to encrypt & decrypt text offline (inspired from/by N.O.D.E. & linenoise/asemica). <br />
-            <br />
-            For the inner workings of the code, this application runs on a series of rules set using JavaScript's bitwise operations. The more characters that are pressed, the more complex the encryption will be. To use this, first enter the text you want to encrypt; then make a key that is long yet memorable (ex. a cell phone number).
+            JAVACRYPT - An easy way to encrypt & decrypt text offline. <br/>
+            It works!
           </div>
         </td>
       </tr>
