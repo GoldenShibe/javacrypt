@@ -27,7 +27,7 @@ If you ever need to make the size of this application smaller, you can always sa
 
 # Goals
 As for the making of this project, it revolves around a few general things:
-* Pure code; no dependencies or need to connect to links
+* Purely offline, client-side code; no dependencies, servers, websites, or need to connect to links to run files
 * Keeping as much code in the main file while making the size of it as small as possible
 * Prevent bugs and exploits while making usage entirely confidential
 * Have all encryption "rules" able to be used more than once without the effect being reversed
