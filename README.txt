@@ -23,3 +23,11 @@ You can automatically generate and download a key that is longer than what you c
 Storage
 -
 If you ever need to make the size of this application smaller, you can always save the code as a .txt file and compress it into a .zip file. Once you have to use it again, save the program as the file type it originally was.
+
+
+# Goals
+As for the making of this project, it revolves around a few general things:
+* Pure code; no dependencies or need to connect to links
+* Keeping as much code in the main file while making the size of it as small as possible
+* Prevent bugs and exploits while making usage entirely confidential
+* Have all encryption "rules" able to be used more than once without the effect being reversed
