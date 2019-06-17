@@ -15,26 +15,26 @@
     <script>
       // js-captcha/robiveli Copyright 2018
       // captcha initial setup
-      var myCaptcha = new jCaptcha({ 
+      var myCaptcha = new jCaptcha({
       // set callback function
-        callback: function(response, $captchaInputElement) { 
-          if (response == 'success') { 
-            $captchaInputElement[0].classList.remove('error'); 
-            $captchaInputElement[0].classList.add('success'); 
-            $captchaInputElement[0].placeholder = 'Submit successful!'; 
-          } 
-          if (response == 'error') { 
-            $captchaInputElement[0].classList.remove('success'); 
-            $captchaInputElement[0].classList.add('error'); 
-            $captchaInputElement[0].placeholder = 'Please try again!'; 
-          } 
-        } 
-      }); 
+        callback: function(response, $captchaInputElement) {
+          if (response == 'success') {
+            $captchaInputElement[0].classList.remove('error');
+            $captchaInputElement[0].classList.add('success');
+            $captchaInputElement[0].placeholder = 'Submit successful!';
+          }
+          if (response == 'error') {
+            $captchaInputElement[0].classList.remove('success');
+            $captchaInputElement[0].classList.add('error');
+            $captchaInputElement[0].placeholder = 'Please try again!';
+          }
+        }
+      });
       // captcha validate on form submit
-      document.querySelector('form').addEventListener('submit', function(e) { 
-        e.preventDefault(); 
+      document.querySelector('form').addEventListener('submit', function(e) {
+        e.preventDefault();
         // captcha validate
-        myCaptcha.validate(); 
+        myCaptcha.validate();
       });
     </script>
     <!-- Once encryption portion is complete the other part (the decryption) can easily be made -->
@@ -49,13 +49,11 @@
           <div id="Page1">
             <!-- js-captcha/robiveli Copyright 2018 -->
             <main>
-              <form class="form" action> 
+              <form class="form" action="">
               <canvas class="jCaptchaText" width="50" height="15"></canvas>
               <input class="jCaptcha" type="text" placeholder="Type in result please">
-                <div pseudo="placeholder">Type in result please</div>
-                <div contenteditable="plaintext-only"></div>
               </input>
-              <button type="submit">Submit</button> 
+              <button type="submit">Submit</button>
               </form>
             </main>
           </div>
